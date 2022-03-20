@@ -4,7 +4,8 @@ pipeline {
     stages {
         stage('checkout ansible repository') {
             steps {
-                git credentialsId: 'avinash_github_new', url: 'git@github.com:Avinashbansod/ansible-prac.git'
+                //git credentialsId: 'avinash_github_new', url: 'git@github.com:Avinashbansod/ansible-prac.git'
+                echo 'Hello World!!'
             }
         }
         stage('Test') {
