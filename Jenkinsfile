@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('checkout ansible repository') {
             steps {
-                echo 'Building..'
+                git credentialsId: 'avinash_github_new', url: 'git@github.com:Avinashbansod/ansible-prac.git'
             }
         }
         stage('Test') {
