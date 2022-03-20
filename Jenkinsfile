@@ -8,14 +8,9 @@ pipeline {
                 //echo 'Hello World!!'
             }
         }
-        stage('Test') {
+        stage('run ansible-playboook') {
             steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
+                ansiblePlaybook credentialsId: 'ansible_key', installation: 'ansible-plugin', inventory: 'hosts', playbook: 'main.yaml', sudoUser: null
             }
         }
     }
